@@ -1,0 +1,12 @@
+[user]
+	name = "Matthew Skinner"
+	email = "matthew@skinnerdev.com"
+[alias]
+        co = checkout
+    	br = branch
+	    cm = commit
+    	st = status
+[merge]
+		rebase = false
+[init]
+    defaultBranch = main

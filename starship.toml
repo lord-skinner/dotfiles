@@ -1,0 +1,137 @@
+format = """
+[╭](fg:current_line)\
+$os\
+$directory\
+$git_branch\
+$fill\
+$kubernetes\
+$gcloud\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$c\
+$cmd_duration\
+$shell\
+$time\
+$username\
+$line_break\
+$character\
+"""
+
+palette = 'dracula'
+add_newline = true
+
+[palettes.dracula]
+foreground = '#F8F8F2'
+background = '#282A36'
+current_line = '#44475A'
+primary = '#1E1F29'
+box = '#44475A'
+blue	= '#6272A4'
+cyan = '#8BE9FD'
+green	= '#50FA7B'
+orange = '#FFB86C'
+pink = '#FF79C6'
+purple = '#BD93F9'
+red	= '#FF5555'
+yellow = '#F1FA8C'
+
+
+[os.symbols]
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = ''
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
+
+# left side
+[directory]
+format = '[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
+home_symbol = " ~/"
+truncation_symbol = ' '
+truncation_length = 2
+read_only = '󱧵 '
+read_only_style = ''
+[git_branch]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)[](fg:box)'
+symbol = ' '
+
+# right side
+[nodejs]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = '󰎙 Node.js'
+
+[python]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' python'
+detect_extensions = ['py', 'ipynb']
+disabled = true
+
+[java]
+format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ' Java'
+
+[gcloud]
+format = '[─](fg:current_line)[](fg:cyan)[$symbol](fg:primary bg:cyan)[](fg:cyan bg:box)[ ($project)](fg:foreground bg:box)[](fg:box)'
+symbol = ' '
+disabled = false
+
+[kubernetes]
+format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $context(/$namespace)](fg:foreground bg:box)[](fg:box)'
+symbol = '󱃾 '
+disabled = false
+
+[[kubernetes.contexts]]
+context_pattern = "minikube"
+context_alias = "local"
+[[kubernetes.contexts]]
+context_pattern = "gke_elastic-edm-dev_us-west1_elastic-idea-apps-platform-dev-primary"
+context_alias = "dev"
+[[kubernetes.contexts]]
+context_pattern = "gke_elastic-edm-test_us-west1_elastic-idea-apps-platform-test"
+context_alias = "test"
+[[kubernetes.contexts]]
+context_pattern = "gke_elastic-edm-prod_us-west1_elastic-idea-apps-platform-prod"
+context_alias = "prod"
+
+[fill]
+symbol = '─'
+style = 'fg:current_line'
+
+[cmd_duration]
+min_time = 500
+format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
+
+[character]
+format = """
+[╰─$symbol](fg:current_line) """
+success_symbol = '[󱖘](fg:bold green)'
+error_symbol = '[×](fg:bold red)'
