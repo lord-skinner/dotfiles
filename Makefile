@@ -21,3 +21,12 @@ zsh:
 	else \
 	    echo "Zsh not found, skipping."; \
 	fi
+
+git:
+	@echo "Setting up git configuration..."
+	@if command -v git > /dev/null; then \
+	    ln -s $(HOME)/dotfiles/.gitignore_global $(HOME)/.gitignore_global; \
+	    echo "Git configuration linked."; \
+	else \
+	    echo "Git not found, skipping."; \
+	fi
