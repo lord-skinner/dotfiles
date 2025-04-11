@@ -1,6 +1,6 @@
 [user]
 	name = "Matthew Skinner"
-	email = "matthew@skinnerdev.com"
+	email = "matthew.skinner@elastic.co"
 [alias]
         co = checkout
     	br = branch
