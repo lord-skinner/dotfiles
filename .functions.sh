@@ -24,3 +24,17 @@ fcd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) && cd "$dir"
 }
+
+gh_pr() {
+  current_branch=$(git branch --show-current)
+  if [ -z "$current_branch" ]; then
+    echo "Not on a branch."
+    return 1
+  fi
+
+  if [ "$1" = "-d" ]; then
+    gh pr create --base main --head "$current_branch" --draft
+  else
+    gh pr create --base main --head "$current_branch"
+  fi
+}
