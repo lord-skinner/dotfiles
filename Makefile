@@ -1,6 +1,6 @@
 .PHONY: all bash zsh starship git
 
-all: bash zsh
+all: bash zsh git
 
 bash:
 	@echo "Setting up bash configuration..."
@@ -26,6 +26,7 @@ git:
 	@echo "Setting up git configuration..."
 	@if command -v git > /dev/null; then \
 	    ln -s $(HOME)/dotfiles/.gitignore_global $(HOME)/.gitignore_global; \
+            ln -s $(HOME)/dotfiles/.gitconfig $(HOME)/.gitconfig
 	    echo "Git configuration linked."; \
 	else \
 	    echo "Git not found, skipping."; \
