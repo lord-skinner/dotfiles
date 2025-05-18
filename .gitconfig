@@ -1,12 +1,12 @@
 [user]
-	name = "Matthew Skinner"
-	email = "matthew.skinner@elastic.co"
+	name = "lord-skinner"
+	email = "matthew@skinnerdev.com"
 [alias]
         co = checkout
     	br = branch
-	    cm = commit
+	cm = commit
     	st = status
 [merge]
-		rebase = false
+	rebase = false
 [init]
-    defaultBranch = main
+    	defaultBranch = main
